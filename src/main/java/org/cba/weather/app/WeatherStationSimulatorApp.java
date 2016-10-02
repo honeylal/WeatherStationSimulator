@@ -48,9 +48,8 @@ public class WeatherStationSimulatorApp {
 			RandomGenerator randomGenerator = new GameRandomGeneratorImpl ();
 			WeatherDataReader gameWeatherDataReader = new GameWeatherDataReaderImpl ();
 			WeatherSimulator gameWeatherSimulator = new GameWeatherSimulatorImpl (	gameWeatherDataReader ,
-																				randomGenerator );
+																					randomGenerator );
 			WeatherStationSimulatorApp simulatorApp = new WeatherStationSimulatorApp ( gameWeatherSimulator );
-
 			
 			simulatorApp.init ();
 			ArrayList < WeatherStation > loadedWeatherStations = simulatorApp.getWeatherStations ();
