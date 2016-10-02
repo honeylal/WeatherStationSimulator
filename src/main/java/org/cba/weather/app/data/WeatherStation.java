@@ -108,7 +108,10 @@ public class WeatherStation {
 	public double getAltitude () {
 		return altitude;
 	}
-
+	
+	/**
+	 * this method return the weather station details
+	 */
 	public String toString(){
 		return "" + stationName+
 				"|" +latitude+
@@ -197,6 +200,13 @@ public class WeatherStation {
 		return currentSeasonNameForDataLoad;
 	}
 
+	/**
+	 * This method set the season day for data loading this will help to load
+	 * the subsequence data into the same season
+	 * 
+	 * @param currentSeasonForDataLoad
+	 * @throws SeasonNotFoundException
+	 */
 	public void setCurrentSeasonNameForDataLoad ( String currentSeasonForDataLoad )
 			throws SeasonNotFoundException {
 		if ( isCurrentDataloadIsForExtremeWeatherSeason () ) {
@@ -216,6 +226,12 @@ public class WeatherStation {
 		this.currentDayForDataLoad = currentDayForDataLoad;
 	}
 
+	/**
+	 * This method set current day index for the data load, this help to load
+	 * the data (weather readings against different times in to the same day)
+	 * 
+	 * @param currentDayForDataLoad
+	 */
 	public void setCurrentDayForDataLoad ( String currentDayForDataLoad ) {
 		boolean isCurrentDayForDataLoadIsInt = WeatherUtil.isInteger ( currentDayForDataLoad );
 		if ( isCurrentDayForDataLoadIsInt ) {
